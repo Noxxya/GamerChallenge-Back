@@ -1,0 +1,56 @@
+### GET All Challenges
+GET http://localhost:3000/challenge/
+Content-Type: application/json
+
+###
+
+### GET Challenge by ID
+GET http://localhost:3000/challenge/4
+Content-Type: application/json
+
+###
+
+### POST Create Challenge
+POST http://localhost:3000/challenge/create
+Content-Type: application/json
+
+{
+  "title": "Challenge Title 2",
+  "description": "Description of the challenge",
+  "trick": "Some useful trick",
+  "media": "https://example.com/media.png",
+  "statut": true,
+  "userId": 1,
+  "difficultyId": 2
+}
+
+
+### PATCH Update Challenge
+PATCH http://localhost:3000/challenge/1
+Content-Type: application/json
+
+{
+  "title": "Updated Challenge Title 2 ",
+  "description": "Updated description of the challenge"
+}
+
+
+### GET category formulaire
+GET http://localhost:3000/api/categories
+
+
+### GET category formulaire with games
+GET http://localhost:3000/api/games/search?search=La
+
+
+###Test GET /challenge/recent
+GET http://localhost:3000/challenge/recent
+Accept: application/json
+
+###Test GET /challenge/top-games
+GET http://localhost:3000/challenge/top-games
+Accept: application/json
+
+###Test GET /user/top-xp
+GET http://localhost:3000/user/top-xp
+Accept: application/json

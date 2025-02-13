@@ -1,0 +1,61 @@
+### Login utilisateur
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "securepassword"
+}
+
+### Login utilisateur
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "email": "dragonslayer99@gmail.com",
+  "password": "f1r3Br34th3r!"
+}
+
+### POST Create Challenge
+POST http://localhost:3000/challenge/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiZHJhZ29uc2xheWVyOTlAZ21haWwuY29tIiwiaWF0IjoxNzMwNzk2ODAxLCJleHAiOjE3MzA4MDA0MDF9.MOwqShOxae59eECvyAC-rZA2AMadCqzstDL60zsiRGo
+
+{
+  "title": "Challenge Title 4",
+  "description": "Description of the challenge",
+  "trick": "Some useful trick",
+  "media": "https://example.com/media.png",
+  "statut": true,
+  "userId": 1,
+  "difficultyId": 2
+}
+
+### Get Top 10 Users by XP
+GET http://localhost:3000/user/top-xp
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiZHJhZ29uc2xheWVyOTlAZ21haWwuY29tIiwiaWF0IjoxNzMwODg1NDEzLCJleHAiOjE3MzA4ODkwMTN9.-b7tq7pV42-Fij633uLPScoJK6XQTM923II2yovlJrc
+
+### Expected Response
+# Status: 200 OK
+# Body: JSON array with up to 10 users, sorted by XP in descending order
+# Example Response:
+# [
+#   { "id": 1, "pseudo": "User1", "xp": 500, ... },
+#   { "id": 2, "pseudo": "User2", "xp": 450, ... },
+#   ...
+# ]
+
+### Get Top 10 Users with Current User Position
+GET http://localhost:3000/user/top-with-position
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoiZHJhZ29uc2xheWVyOTlAZ21haWwuY29tIiwiaWF0IjoxNzMwODg2ODMzLCJleHAiOjE3MzA4OTA0MzN9.wIlzJ9JLF3zDVnHOrL2HKWCFRzEcQnTCSuXBJ2kZsqU
+Content-Type: application/json
+
+### Expected Response
+# Status: 200 OK
+# Body: JSON object with `topUsers`, `currentUser`, and `neighbors`
+
+### Obtenir les jeux avec le plus de challenges
+GET http://localhost:3000/challenge/top-games
+Content-Type: application/json
+
+

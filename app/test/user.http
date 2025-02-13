@@ -1,0 +1,43 @@
+
+GET http://localhost:3000/user/profile
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImVtYWlsIjoibm94QGdtYWlsLmNvbSIsInBzZXVkbyI6Ik5veHh5IiwiaW1hZ2UiOm51bGwsInhwIjowLCJpYXQiOjE3MzE5NDEyMjR9.f9zK3vi9Lw9mYw1sJUcH3yNJTiXwutH-hAm7Z1sLTc8
+
+
+### POST Create User
+POST http://localhost:3000/user/
+Content-Type: application/json
+
+{
+  "pseudo": "testuser2",
+  "email": "test@example.com",
+  "password": "securepassword"
+}
+
+### GET All Users
+GET http://localhost:3000/user/
+Content-Type: application/json
+
+### GET User by ID
+GET http://localhost:3000/user/6
+Content-Type: application/json
+
+### POST Create User with Missing Fields
+POST http://localhost:3000/user/
+Content-Type: application/json
+
+{
+  "pseudo": "incompleteuser"
+  // Missing email and password
+}
+
+### POST Create User with Existing Email
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+  "pseudo": "Noxxya",
+  "email": "nox@gmail.com", 
+  "password": "romain73110."
+}
+
